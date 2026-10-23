@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Διαδραστικός Οδηγός</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 12px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        .content {
+            padding: 20px 16px;
+        }
+
+        /* Pure CSS Page Switching using :target pseudo-class (No Javascript needed at all) */
+        .page {
+            display: none;
+        }
+
+        /* Show page when targeted */
+        .page:target {
+            display: block !important;
+        }
+
+        /* Default fallback to show home page if no target matched */
+        #home {
+            display: block;
+        }
+
+        /* When any page is targeted, hide default #home unless #home is targeted */
+        :target ~ #home {
+            display: none;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .menu-btn {
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .menu-btn:active {
+            background: #e2e8f0;
+        }
+
+        .menu-btn .title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1e3a8a;
+            display: block;
+        }
+
+        .menu-btn .desc {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #1e3a8a;
+            font-weight: 700;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .section-body {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+
+        .section-body ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .section-body li {
+            margin-bottom: 6px;
+        }
+
+        .note-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #1e40af;
+            margin-top: 12px;
+        }
+
+        .nav-actions {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-more {
+            background: #f1f5f9;
+            color: #1e3a8a !important;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            width: 100%;
+            display: block;
+            text-decoration: none;
+        }
+
+        .btn-more:active {
+            background: #e2e8f0;
+        }
+
+        .btn-home {
+            background: #1e3a8a;
+            color: #ffffff !important;
+            border: none;
+            border-radius: 10px;
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            width: 100%;
+            display: block;
+            text-decoration: none;
+        }
+
+        .btn-home:active {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>ΔΙΑΔΡΑΣΤΙΚΟΣ ΟΔΗΓΟΣ</h1>
+        <p>Οδηγός Πλοήγησης</p>
+    </div>
+
+    <div class="content">
+
+        <!-- ΕΝΟΤΗΤΑ 1 -->
+        <div id="page-1" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 1</div>
+            <div class="section-subtitle">Σύντομη περιγραφή της πρώτης ενότητας</div>
+            <div class="section-body">
+                Εδώ μπαίνει το βασικό κείμενο της πρώτης ενότητας. Μπορείτε να προσθέσετε παραγράφους, λίστες, εικόνες ή συνδέσμους.
+            </div>
+            <div class="note-box">
+                Σημείωση: Αυτό είναι ενδεικτικό περιεχόμενο για να δοκιμάσετε την πλοήγηση.
+            </div>
+            <div class="nav-actions">
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 2 -->
+        <div id="page-2" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 2</div>
+            <div class="section-subtitle">Βασικά σημεία και οδηγίες</div>
+            <div class="section-body">
+                Εδώ εμφανίζονται οι κύριες πληροφορίες της δεύτερης ενότητας.
+                <ul>
+                    <li>Πρώτο βασικό σημείο</li>
+                    <li>Δεύτερο βασικό σημείο</li>
+                    <li>Τρίτο βασικό σημείο</li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="#page-2-more" class="btn-more">Διαβάστε περισσότερα →</a>
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 2 - ΠΕΡΙΣΣΟΤΕΡΑ -->
+        <div id="page-2-more" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 2 – Περισσότερα</div>
+            <div class="section-subtitle">Πρόσθετες πληροφορίες για την Ενότητα 2</div>
+            <div class="section-body">
+                Αυτή είναι η πρόσθετη σελίδα πληροφοριών για την Ενότητα 2.<br><br>
+                Εδώ μπορείτε να βάλετε το εκτενές κείμενο που δεν θέλετε να εμφανίζεται στην κύρια σελίδα της ενότητας.
+                <ul>
+                    <li>Αναλυτική πληροφορία ή επεξήγηση</li>
+                    <li>Παράδειγμα ή πρακτική εφαρμογή</li>
+                    <li>Σημαντικές σημειώσεις και διευκρινίσεις</li>
+                </ul>
+            </div>
+            <div class="note-box">
+                Δοκιμή πλοήγησης: Χρησιμοποιήστε «Πίσω στην ενότητα» για να επιστρέψετε ή «Αρχική» για το μενού.
+            </div>
+            <div class="nav-actions">
+                <a href="#page-2" class="btn-more">← Πίσω στην ενότητα</a>
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 3 -->
+        <div id="page-3" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 3</div>
+            <div class="section-subtitle">Διαδικασία και βήματα</div>
+            <div class="section-body">
+                Περιγράψτε εδώ τη διαδικασία με απλή και κατανοητή σειρά.<br><br>
+                Μπορείτε να χρησιμοποιήσετε αριθμημένα βήματα ή παραδείγματα.
+            </div>
+            <div class="nav-actions">
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 4 -->
+        <div id="page-4" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 4</div>
+            <div class="section-subtitle">Αναλυτικά στοιχεία</div>
+            <div class="section-body">
+                Αυτή η σελίδα μπορεί να περιλαμβάνει πιο αναλυτικό κείμενο, πίνακες ή επεξηγήσεις.
+            </div>
+            <div class="nav-actions">
+                <a href="#page-4-more" class="btn-more">Διαβάστε περισσότερα →</a>
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 4 - ΠΕΡΙΣΣΟΤΕΡΑ -->
+        <div id="page-4-more" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 4 – Περισσότερα</div>
+            <div class="section-subtitle">Πρόσθετες πληροφορίες για την Ενότητα 4</div>
+            <div class="section-body">
+                Αυτή είναι η πρόσθετη σελίδα πληροφοριών για την Ενότητα 4.<br><br>
+                Εδώ μπορείτε να βάλετε το εκτενές κείμενο που δεν θέλετε να εμφανίζεται στην κύρια σελίδα της ενότητας.
+                <ul>
+                    <li>Αναλυτική πληροφορία ή επεξήγηση</li>
+                    <li>Παράδειγμα ή πρακτική εφαρμογή</li>
+                    <li>Σημαντικές σημειώσεις και διευκρινίσεις</li>
+                </ul>
+            </div>
+            <div class="note-box">
+                Δοκιμή πλοήγησης: Χρησιμοποιήστε «Πίσω στην ενότητα» για να επιστρέψετε ή «Αρχική» για το μενού.
+            </div>
+            <div class="nav-actions">
+                <a href="#page-4" class="btn-more">← Πίσω στην ενότητα</a>
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 5 -->
+        <div id="page-5" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 5</div>
+            <div class="section-subtitle">Χρήσιμες πληροφορίες</div>
+            <div class="section-body">
+                Προσθέστε εδώ χρήσιμες πληροφορίες, προϋποθέσεις ή σημεία που πρέπει να θυμάται ο αναγνώστης.
+            </div>
+            <div class="nav-actions">
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 6 -->
+        <div id="page-6" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 6</div>
+            <div class="section-subtitle">Παραδείγματα</div>
+            <div class="section-body">
+                Χρησιμοποιήστε αυτή την ενότητα για παραδείγματα, σενάρια ή σύντομες επεξηγήσεις.
+            </div>
+            <div class="nav-actions">
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 7 -->
+        <div id="page-7" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 7</div>
+            <div class="section-subtitle">Ειδικές περιπτώσεις</div>
+            <div class="section-body">
+                Εδώ μπορείτε να παρουσιάσετε ειδικές περιπτώσεις, εξαιρέσεις ή σημαντικές διευκρινίσεις.
+            </div>
+            <div class="note-box">
+                Χρήσιμο: Μπορείτε να δώσετε έμφαση σε προειδοποιήσεις ή σημαντικά σημεία.
+            </div>
+            <div class="nav-actions">
+                <a href="#page-7-more" class="btn-more">Διαβάστε περισσότερα →</a>
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 7 - ΠΕΡΙΣΣΟΤΕΡΑ -->
+        <div id="page-7-more" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 7 – Περισσότερα</div>
+            <div class="section-subtitle">Πρόσθετες πληροφορίες για την Ενότητα 7</div>
+            <div class="section-body">
+                Αυτή είναι η πρόσθετη σελίδα πληροφοριών για την Ενότητα 7.<br><br>
+                Εδώ μπορείτε να βάλετε το εκτενές κείμενο που δεν θέλετε να εμφανίζεται στην κύρια σελίδα της ενότητας.
+                <ul>
+                    <li>Αναλυτική πληροφορία ή επεξήγηση</li>
+                    <li>Παράδειγμα ή πρακτική εφαρμογή</li>
+                    <li>Σημαντικές σημειώσεις και διευκρινίσεις</li>
+                </ul>
+            </div>
+            <div class="note-box">
+                Δοκιμή πλοήγησης: Χρησιμοποιήστε «Πίσω στην ενότητα» για να επιστρέψετε ή «Αρχική» για το μενού.
+            </div>
+            <div class="nav-actions">
+                <a href="#page-7" class="btn-more">← Πίσω στην ενότητα</a>
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΕΝΟΤΗΤΑ 8 -->
+        <div id="page-8" class="page">
+            <div class="section-title">ΕΝΟΤΗΤΑ 8</div>
+            <div class="section-subtitle">Συμπληρωματικό υλικό</div>
+            <div class="section-body">
+                Η τελευταία ενότητα μπορεί να περιλαμβάνει συμπληρωματικό υλικό, στοιχεία επικοινωνίας ή επόμενα βήματα.
+            </div>
+            <div class="nav-actions">
+                <a href="#home" class="btn-home">⌂ Αρχική</a>
+            </div>
+        </div>
+
+        <!-- ΚΕΝΤΡΙΚΟ ΜΕΝΟΥ (MUST BE PLACED AFTER ALL TARGET PAGES) -->
+        <div id="home" class="page">
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; text-align: center;">Επιλέξτε μία από τις 8 ενότητες για να δείτε το περιεχόμενό της.</p>
+            <div class="grid">
+                <a href="#page-1" class="menu-btn">
+                    <span class="title">1. Ενότητα 1</span>
+                    <span class="desc">Μια σύντομη εισαγωγή στο θέμα της ενότητας 1.</span>
+                </a>
+                <a href="#page-2" class="menu-btn">
+                    <span class="title">2. Ενότητα 2</span>
+                    <span class="desc">Περιγραφή και βασικές πληροφορίες.</span>
+                </a>
+                <a href="#page-3" class="menu-btn">
+                    <span class="title">3. Ενότητα 3</span>
+                    <span class="desc">Τα βήματα που χρειάζεται να γνωρίζετε.</span>
+                </a>
+                <a href="#page-4" class="menu-btn">
+                    <span class="title">4. Ενότητα 4</span>
+                    <span class="desc">Πρόσθετες λεπτομέρειες για το θέμα.</span>
+                </a>
+                <a href="#page-5" class="menu-btn">
+                    <span class="title">5. Ενότητα 5</span>
+                    <span class="desc">Συγκεντρωμένες πληροφορίες και υπενθυμίσεις.</span>
+                </a>
+                <a href="#page-6" class="menu-btn">
+                    <span class="title">6. Ενότητα 6</span>
+                    <span class="desc">Παραδείγματα για καλύτερη κατανόηση.</span>
+                </a>
+                <a href="#page-7" class="menu-btn">
+                    <span class="title">7. Ενότητα 7</span>
+                    <span class="desc">Πληροφορίες για ειδικές περιπτώσεις.</span>
+                </a>
+                <a href="#page-8" class="menu-btn">
+                    <span class="title">8. Ενότητα 8</span>
+                    <span class="desc">Επιπλέον στοιχεία και επόμενα βήματα.</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
